@@ -42,35 +42,23 @@
 
         <EditText
             android:id="@+id/et_email"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
             android:hint="email address"
-            android:textColorHint="@color/grey"
             android:inputType="textEmailAddress"
-            android:textColor="@color/white"
-            android:paddingHorizontal="20dp"
-            app:backgroundTint="@null"
-            android:background="@drawable/bg_auth_et"
             app:layout_constraintTop_toBottomOf="@+id/tv_welcome2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="80dp"/>
+            android:layout_marginTop="100dp"
+            style="@style/AuthEditText"/>
 
         <EditText
             android:id="@+id/et_password"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
             android:hint="password"
-            android:textColorHint="@color/grey"
             android:inputType="textPassword"
-            android:textColor="@color/white"
-            android:paddingHorizontal="20dp"
-            app:backgroundTint="@null"
-            android:background="@drawable/bg_auth_et"
             app:layout_constraintTop_toBottomOf="@+id/et_email"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            style="@style/AuthEditText"/>
 
         <TextView
             android:id="@+id/tv_forgotPassword"
@@ -95,7 +83,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_forgotPassword"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="100dp"
             app:backgroundTint="@null"
             android:textColor="@color/dark_blue_grey"
             android:background="@drawable/bg_btn_sign_in" />
