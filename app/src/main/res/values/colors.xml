@@ -26,4 +26,6 @@
     <color name="brown">#795548</color>
     <color name="grey">#9E9E9E</color>
     <color name="blue_grey">#607D8B</color>
+    <color name="dark_blue_grey">#36363D</color>
+    <color name="light_blue_2">#ADD8E6</color>
 </resources>
