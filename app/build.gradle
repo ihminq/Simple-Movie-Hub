@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.minhth36.movie_hub'
+    namespace 'com.ihminq.movie_hub'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.minhth36.movie_hub"
+        applicationId "com.ihminq.movie_hub"
         minSdk 29
         targetSdk 35
         versionCode 1
@@ -26,10 +26,39 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+        buildConfig true
+    }
 }
 
 dependencies {
 
+    // Add the dependency for the Firebase Authentication library
+    implementation("com.google.firebase:firebase-auth")
+
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.hilt.android
+    annotationProcessor libs.hilt.compiler
+    implementation libs.dagger.core
+    annotationProcessor  libs.dagger.compiler
+    implementation libs.dagger.android
+    implementation libs.firebase.core
+    implementation libs.paging.rxjava
+    implementation libs.paging.runtime
+    implementation libs.rxandroid
+    implementation libs.rxjava
+    implementation libs.work
+    implementation libs.navigation
+    implementation libs.navigation.fragment
+    implementation libs.preference.ktx
+    implementation libs.retrofit.adapter
+    implementation libs.retrofit.core
+    implementation libs.retrofit.gson
+    implementation libs.picasso
     implementation libs.appcompat
     implementation libs.material
     testImplementation libs.junit

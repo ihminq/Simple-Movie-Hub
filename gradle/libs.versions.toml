@@ -5,6 +5,22 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
+hiltAndroid = "2.56.1"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
+retrofit = "2.9.0"
+retrofit-converter = "2.5.0"
+retrofit-rxjava-adapter = "1.0.0"
+picasso = "2.8"
+preference-ktx = "1.2.1"
+navigation-ui = "2.8.9"
+work = "2.10.0"
+rxjava2 = "2.2.21"
+rxandroid= "2.1.1"
+paging = "3.3.6"
+firebase = "21.0.0"
+dagger = "2.52"
+navigation-fragment = "2.8.9"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -12,7 +28,26 @@ ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitV
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit-converter" }
+picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
+retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit"}
+preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preference-ktx"}
+navigation = { module = "androidx.navigation:navigation-ui", version.ref = "navigation-ui"}
+work = { module = "androidx.work:work-runtime", version.ref = "work"}
+rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava2"}
+rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxandroid"}
+retrofit-adapter = { module = "com.jakewharton.retrofit:retrofit2-rxjava2-adapter", version.ref = "retrofit-rxjava-adapter"}
+paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging"}
+paging-rxjava = { module = "androidx.paging:paging-rxjava2", version.ref = "paging"}
+firebase-core = { module = "com.google.firebase:firebase-database", version.ref = "firebase"}
+dagger-core = { module = "com.google.dagger:dagger", version.ref = "dagger"}
+dagger-android = { module = "com.google.dagger:dagger-android", version.ref = "dagger"}
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger"}
+navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation-fragment" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 
