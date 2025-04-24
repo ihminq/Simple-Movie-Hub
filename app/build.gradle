@@ -1,5 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
+    // Add the Google services Gradle plugin
+    id 'com.google.gms.google-services'
+    id 'com.google.dagger.hilt.android'
+}
+
+// Load API KEY/Firebase database URL from appsettings.properties
+def secretsFile = rootProject.file("appsettings.properties")
+def secrets = new Properties()
+if (secretsFile.exists()) {
+    secrets.load(new FileInputStream(secretsFile))
 }
 
 android {
@@ -14,6 +24,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "API_KEY", "\"${secrets.getProperty("API_KEY")}\""
+        buildConfigField "String", "FIREBASE_URL", "\"${secrets.getProperty("FIREBASE_URL")}\""
     }
 
     buildTypes {
@@ -35,6 +48,8 @@ android {
 }
 
 dependencies {
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:33.12.0')
 
     // Add the dependency for the Firebase Authentication library
     implementation("com.google.firebase:firebase-auth")
