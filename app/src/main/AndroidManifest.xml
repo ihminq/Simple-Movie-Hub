@@ -17,7 +17,7 @@
         android:theme="@style/Theme.MovieHub"
         tools:targetApi="35">
         <activity
-            android:name=".presentation.splashscreen.SplashScreenActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
