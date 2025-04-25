@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.ihminq.movie_hub.R;
 import com.ihminq.movie_hub.databinding.FragmentLoginBinding;
 import com.ihminq.movie_hub.domain.model.auth.User;
