@@ -5,11 +5,9 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.ihminq.movie_hub.domain.exception.ValidationException;
 import com.ihminq.movie_hub.domain.model.auth.User;
+import com.ihminq.movie_hub.domain.usecase.auth.CheckLoggedInStatusUseCase;
 import com.ihminq.movie_hub.domain.usecase.auth.LoginUseCase;
 import com.ihminq.movie_hub.domain.utils.ValidateResult;
 import com.ihminq.movie_hub.presentation.utils.SingleEvent;
@@ -25,12 +23,14 @@ import io.reactivex.disposables.Disposable;
 public class LoginViewModel extends ViewModel {
     private static final String TAG = "LoginViewModel";
     private final LoginUseCase mLoginUseCase;
+    private final CheckLoggedInStatusUseCase mCheckLoggedInStatusUseCase;
     private final CompositeDisposable mDisposables = new CompositeDisposable();
     private final MutableLiveData<SingleEvent<ValidateResult>> mLoginResultLive;
 
     @Inject
-    public LoginViewModel(LoginUseCase loginUseCase) {
+    public LoginViewModel(LoginUseCase loginUseCase, CheckLoggedInStatusUseCase checkLoggedInStatusUseCase) {
         this.mLoginUseCase = loginUseCase;
+        this.mCheckLoggedInStatusUseCase = checkLoggedInStatusUseCase;
         mLoginResultLive = new MutableLiveData<>();
     }
 
@@ -54,14 +54,8 @@ public class LoginViewModel extends ViewModel {
         return this.mLoginResultLive;
     }
 
-    public void logout() {
-
-    }
-
     public boolean isCurrentUserLoggedIn() {
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        return currentUser != null;
+        return mCheckLoggedInStatusUseCase.execute();
     }
 
     @Override
