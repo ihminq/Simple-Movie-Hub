@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+    <data>
+        <variable
+            name="user"
+            type="com.ihminq.movie_hub.domain.model.auth.User" />
+
+        <variable
+            name="loginViewModel"
+            type="com.ihminq.movie_hub.presentation.login.viewmodel.LoginViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -48,7 +58,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="100dp"
-            style="@style/AuthEditText"/>
+            style="@style/AuthEditText"
+            android:text="@={user.email}"/>
 
         <EditText
             android:id="@+id/et_password"
@@ -58,7 +69,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp"
-            style="@style/AuthEditText"/>
+            style="@style/AuthEditText"
+            android:text="@={user.password}"/>
 
         <TextView
             android:id="@+id/tv_forgotPassword"
@@ -86,7 +98,8 @@
             android:layout_marginTop="100dp"
             app:backgroundTint="@null"
             android:textColor="@color/dark_blue_grey"
-            android:background="@drawable/bg_btn_sign_in" />
+            android:background="@drawable/bg_btn_sign_in"
+            android:onClick="@{() -> loginViewModel.login(user)}"/>
 
         <TextView
             android:id="@+id/tv_registerTitle"
