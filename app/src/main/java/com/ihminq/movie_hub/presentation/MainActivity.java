@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ihminq.movie_hub.R;
 
+import dagger.hilt.android.AndroidEntryPoint;
 
+@AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
 
     @Override
