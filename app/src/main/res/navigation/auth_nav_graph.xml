@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.ihminq.movie_hub.presentation.home.HomeFragment"
+        android:name="com.ihminq.movie_hub.presentation.home.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home"
         app:popUpToInclusive="true">
