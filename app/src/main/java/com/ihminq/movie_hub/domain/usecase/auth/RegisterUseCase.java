@@ -44,6 +44,10 @@ public class RegisterUseCase {
         }
 
         Log.d(TAG, "User info valid");
+
+        //trim " "
+        user.setFullname(user.getFullname().trim());
+
         return mUserRepository.register(user)
                 .subscribeOn(Schedulers.io());
 
