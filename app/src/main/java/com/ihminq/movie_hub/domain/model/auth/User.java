@@ -12,6 +12,8 @@ public class User {
     private String password;
     @Nullable
     private LocalDate birthDate;
+    @Nullable
+    private String profileImageUrl;
 
     public User() {}
 
@@ -67,5 +69,14 @@ public class User {
 
     public void setBirthDate(@Nullable LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    @Nullable
+    public String getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
+    public void setProfileImageUrl(@Nullable String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
     }
 }
