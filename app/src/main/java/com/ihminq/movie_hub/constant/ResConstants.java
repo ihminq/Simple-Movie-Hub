@@ -11,4 +11,5 @@ public class ResConstants {
     public static final int IC_TAB_2_SELECTED = R.drawable.ic_tab_2_selected;
     public static final int IC_TAB_3_SELECTED = R.drawable.ic_tab_3_selected;
     public static final int IC_TAB_4_SELECTED = R.drawable.ic_tab_4_selected;
+    public static final int IMG_POSTER_PLACEHOLDER = R.color.grey;
 }
