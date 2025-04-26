@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.ihminq.movie_hub.presentation.movies.FirstTabFragment;
+import com.ihminq.movie_hub.presentation.movies.ui.FirstTabFragment;
 import com.ihminq.movie_hub.presentation.setting.ThirdTabFragment;
 import com.ihminq.movie_hub.presentation.userprofile.FourthTabFragment;
 import com.ihminq.movie_hub.presentation.watchlist.SecondTabFragment;
