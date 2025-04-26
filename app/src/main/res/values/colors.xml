@@ -29,4 +29,6 @@
     <color name="dark_blue_grey">#36363D</color>
     <color name="light_blue_2">#ADD8E6</color>
     <color name="dark_blue_purple">#1d1d28</color>
+    <color name="smoke_blue_purple">#292940</color>
+    <color name="light_blue_grey">#B0BEC5</color>
 </resources>
