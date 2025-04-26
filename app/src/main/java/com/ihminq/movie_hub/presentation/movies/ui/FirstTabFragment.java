@@ -1,4 +1,4 @@
-package com.ihminq.movie_hub.presentation.movies;
+package com.ihminq.movie_hub.presentation.movies.ui;
 
 import android.os.Bundle;
 
@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ihminq.movie_hub.R;
 import com.ihminq.movie_hub.databinding.FragmentFirstTabBinding;
 
 
