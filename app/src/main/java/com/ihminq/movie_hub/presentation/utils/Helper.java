@@ -10,4 +10,12 @@ public class Helper {
 
         return "Hello " + nameParts[nameParts.length - 1];
     }
+
+    public static String getDisplayRating(float rating) {
+        if (rating <= 0 || rating > 10) {
+            return "0.0";
+        }
+
+        return String.format("%.1f", rating);
+    }
 }
