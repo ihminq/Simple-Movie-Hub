@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="185dp"
+        android:layout_height="270dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/dark_blue_purple">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_posterHolder"
+            android:layout_width="165dp"
+            android:layout_height="200dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@color/grey"
+                android:contentDescription="movie_poster"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_ratingHolder"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            app:layout_constraintEnd_toEndOf="@id/cv_posterHolder"
+            app:layout_constraintTop_toTopOf="@id/cv_posterHolder"
+            android:background="@drawable/bg_rating_holder">
+
+            <ImageView
+                android:id="@+id/iv_movieRatingIcon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_movie_rating"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="7dp"/>
+
+            <TextView
+                android:id="@+id/tv_movieRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintStart_toEndOf="@id/iv_movieRatingIcon"
+                android:text="..."
+                android:textColor="@color/white"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_movieTitle"
+            android:layout_width="165dp"
+            android:layout_height="25dp"
+            app:layout_constraintTop_toBottomOf="@id/cv_posterHolder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="5dp"
+            android:text="..."
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tv_movieReleaseDate"
+            android:layout_width="165dp"
+            android:layout_height="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_movieTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="..."
+            android:textColor="@color/grey"
+            android:textSize="15sp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
