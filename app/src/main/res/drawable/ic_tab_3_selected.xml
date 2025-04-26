@@ -5,8 +5,8 @@
     android:viewportHeight="24">
 
   <path
-      android:fillColor="@color/light_blue_2"
-      android:strokeColor="@color/light_blue_2"
+      android:fillColor="@color/light_blue_grey"
+      android:strokeColor="@color/light_blue_grey"
       android:strokeWidth="1.5"
       android:fillType="evenOdd"
       android:pathData="
