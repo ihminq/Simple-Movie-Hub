@@ -6,7 +6,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.ihminq.movie_hub.presentation.movies.ui.FirstTabFragment;
 import com.ihminq.movie_hub.presentation.setting.ThirdTabFragment;
-import com.ihminq.movie_hub.presentation.userprofile.FourthTabFragment;
+import com.ihminq.movie_hub.presentation.userprofile.ui.FourthTabFragment;
 import com.ihminq.movie_hub.presentation.watchlist.SecondTabFragment;
 
 import java.util.Arrays;
