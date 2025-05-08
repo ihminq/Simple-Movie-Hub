@@ -3,17 +3,26 @@ package com.ihminq.movie_hub.domain.model.auth;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.ihminq.movie_hub.domain.model.movie.MovieHome;
+import com.ihminq.movie_hub.domain.model.movie.MovieReminder;
+
 import java.time.LocalDate;
+import java.util.List;
 
 public class User {
     private String uid;
     private String fullname;
     private String email;
     private String password;
+    private boolean gender;
     @Nullable
     private LocalDate birthDate;
     @Nullable
     private String profileImageUrl;
+    @Nullable
+    private List<MovieHome> watchlist;
+    @Nullable
+    private List<MovieReminder> reminderList;
 
     public User() {}
 
@@ -22,6 +31,7 @@ public class User {
         this.fullname = fullname;
         this.email = email;
         this.password = password;
+        this.gender = false;
     }
 
     @NonNull
@@ -62,6 +72,14 @@ public class User {
         this.password = password;
     }
 
+    public boolean isGender() {
+        return gender;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
+
     @Nullable
     public LocalDate getBirthDate() {
         return birthDate;
@@ -78,5 +96,31 @@ public class User {
 
     public void setProfileImageUrl(@Nullable String profileImageUrl) {
         this.profileImageUrl = profileImageUrl;
+    }
+
+    @Nullable
+    public List<MovieHome> getWatchlist() {
+        return watchlist;
+    }
+
+    public void setWatchlist(@Nullable List<MovieHome> watchlist) {
+        this.watchlist = watchlist;
+    }
+
+    @Nullable
+    public List<MovieReminder> getReminderList() {
+        return reminderList;
+    }
+
+    public void setReminderList(@Nullable List<MovieReminder> reminderList) {
+        this.reminderList = reminderList;
+    }
+
+    public int getWatchlistCount() {
+        return watchlist == null ? 0 : watchlist.size();
+    }
+
+    public int getRemidnersCount() {
+        return reminderList == null ? 0 : reminderList.size();
     }
 }
