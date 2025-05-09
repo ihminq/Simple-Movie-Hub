@@ -11,7 +11,9 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.ihminq.movie_hub.R;
 import com.ihminq.movie_hub.databinding.FragmentProfileBinding;
 import com.ihminq.movie_hub.domain.model.auth.User;
 import com.ihminq.movie_hub.presentation.home.viewmodel.HomeViewModel;
@@ -23,6 +25,7 @@ public class ProfileFragment extends Fragment {
     private FragmentProfileBinding mBinding;
     private HomeViewModel mHomeViewModel;
     private NavController mNavController;
+    private Button mBtnEdit, mBtnLogout;
 
     public ProfileFragment() {}
 
@@ -45,7 +48,26 @@ public class ProfileFragment extends Fragment {
 
         initViews();
         bindData();
+        initListeners();
         return mBinding.getRoot();
+    }
+
+    private void initListeners() {
+        onBtnEditClicked();
+        onBtnLogoutClicked();
+    }
+
+    private void onBtnLogoutClicked() {
+        mBtnLogout.setOnClickListener(v -> mHomeViewModel.logout());
+    }
+
+
+    private void onBtnEditClicked() {
+        mBtnEdit.setOnClickListener(v -> navigateToEditProfileFragment());
+    }
+
+    private void navigateToEditProfileFragment() {
+        mNavController.navigate(R.id.action_profileFragment_to_editProfileFragment);
     }
 
     private void bindData() {
@@ -54,6 +76,7 @@ public class ProfileFragment extends Fragment {
     }
 
     private void initViews() {
-
+        mBtnEdit = mBinding.btnEdit;
+        mBtnLogout = mBinding.btnLogout;
     }
 }
