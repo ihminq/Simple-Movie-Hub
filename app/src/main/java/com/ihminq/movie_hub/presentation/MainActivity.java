@@ -7,11 +7,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.ihminq.movie_hub.R;
-import com.ihminq.movie_hub.presentation.home.viewmodel.HomeViewModel;
+import com.ihminq.movie_hub.presentation.auth.viewmodel.AuthViewModel;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -27,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
         // get NavController
         NavHostFragment navHost = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.main_nav_host);
         mNavController = navHost.getNavController();
-        HomeViewModel mHomeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        AuthViewModel authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
 
-        mHomeViewModel.getLoggedOutStatusLive().observe(this, isOut -> {
+        authViewModel.getLoggedOutStatusLive().observe(this, isOut -> {
             if (Boolean.TRUE.equals(isOut)) {
 //                // pop tất cả destinations trả về startDestination (loginFragment)
 //                mNavController.popBackStack(

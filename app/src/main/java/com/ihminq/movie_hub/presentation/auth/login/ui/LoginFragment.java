@@ -1,4 +1,4 @@
-package com.ihminq.movie_hub.presentation.login.ui;
+package com.ihminq.movie_hub.presentation.auth.login.ui;
 
 import android.os.Bundle;
 
@@ -18,12 +18,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.ihminq.movie_hub.R;
 import com.ihminq.movie_hub.databinding.FragmentLoginBinding;
 import com.ihminq.movie_hub.domain.model.auth.User;
 import com.ihminq.movie_hub.domain.utils.ValidateResult;
-import com.ihminq.movie_hub.presentation.login.viewmodel.LoginViewModel;
+import com.ihminq.movie_hub.presentation.auth.viewmodel.AuthViewModel;
 import com.ihminq.movie_hub.presentation.utils.SingleEvent;
 
 import dagger.hilt.android.AndroidEntryPoint;
@@ -31,7 +30,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class LoginFragment extends Fragment {
     private FragmentLoginBinding mBinding;
-    private LoginViewModel mLoginViewModel;
+    private AuthViewModel mAuthViewModel;
     private TextView mTvRegister;
     private EditText mEtEmail, mEtPassword;
     private NavController mNavController;
@@ -45,10 +44,10 @@ public class LoginFragment extends Fragment {
         mNavController = NavHostFragment.findNavController(this);
 
         //get LoginViewModel
-        mLoginViewModel = new ViewModelProvider(requireActivity()).get(LoginViewModel.class);
+        mAuthViewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
 
         //check if current user session is not expired
-        if (mLoginViewModel.isCurrentUserLoggedIn()) {
+        if (mAuthViewModel.isCurrentUserLoggedIn()) {
             navigateToHome();
         }
     }
@@ -75,7 +74,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void onLoginResultChanged() {
-        mLoginViewModel.getLoginResultLive().observe(getViewLifecycleOwner(), new Observer<SingleEvent<ValidateResult>>() {
+        mAuthViewModel.getLoginResultLive().observe(getViewLifecycleOwner(), new Observer<SingleEvent<ValidateResult>>() {
             @Override
             public void onChanged(SingleEvent<ValidateResult> event) {
                 ValidateResult result = event.getContentIfNotHandled();
@@ -156,7 +155,7 @@ public class LoginFragment extends Fragment {
     private void bindData() {
         mBinding.setLifecycleOwner(getViewLifecycleOwner());
         mBinding.setUser(new User());
-        mBinding.setLoginViewModel(mLoginViewModel);
+        mBinding.setAuthViewModel(mAuthViewModel);
     }
 
     private void initViews() {

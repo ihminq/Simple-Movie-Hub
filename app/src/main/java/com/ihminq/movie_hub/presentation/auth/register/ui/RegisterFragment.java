@@ -1,4 +1,4 @@
-package com.ihminq.movie_hub.presentation.register.ui;
+package com.ihminq.movie_hub.presentation.auth.register.ui;
 
 import android.os.Bundle;
 
@@ -20,14 +20,14 @@ import android.widget.Toast;
 import com.ihminq.movie_hub.databinding.FragmentRegisterBinding;
 import com.ihminq.movie_hub.domain.model.auth.User;
 import com.ihminq.movie_hub.domain.utils.ValidateResult;
-import com.ihminq.movie_hub.presentation.register.viewmodel.RegisterViewModel;
+import com.ihminq.movie_hub.presentation.auth.viewmodel.AuthViewModel;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
 public class RegisterFragment extends Fragment {
     private FragmentRegisterBinding mBinding;
-    private RegisterViewModel mRegisterViewModel;
+    private AuthViewModel mAuthViewModel;
     private NavController mNavController;
     private Button mBackBtn;
     private EditText mEtFullname, mEtEmail, mEtPassword;
@@ -43,7 +43,7 @@ public class RegisterFragment extends Fragment {
         mNavController = NavHostFragment.findNavController(this);
 
         //get ViewModel
-        mRegisterViewModel = new ViewModelProvider(requireActivity()).get(RegisterViewModel.class);
+        mAuthViewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
     }
 
     @Override
@@ -61,7 +61,7 @@ public class RegisterFragment extends Fragment {
     }
 
     private void onRegisterResultChanged() {
-        mRegisterViewModel.getRegisterResultLive().observe(getViewLifecycleOwner(), event -> {
+        mAuthViewModel.getRegisterResultLive().observe(getViewLifecycleOwner(), event -> {
             ValidateResult result = event.getContentIfNotHandled();
 
             if (result == null) return;
@@ -154,7 +154,7 @@ public class RegisterFragment extends Fragment {
     private void bindData() {
         mBinding.setLifecycleOwner(getViewLifecycleOwner());
         mBinding.setUser(new User());
-        mBinding.setRegisterViewModel(mRegisterViewModel);
+        mBinding.setAuthViewModel(mAuthViewModel);
     }
 
     private void initViews() {

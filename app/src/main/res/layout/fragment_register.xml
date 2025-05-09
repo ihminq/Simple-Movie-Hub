@@ -6,8 +6,8 @@
             type="com.ihminq.movie_hub.domain.model.auth.User"/>
 
         <variable
-            name="registerViewModel"
-            type="com.ihminq.movie_hub.presentation.register.viewmodel.RegisterViewModel" />
+            name="authViewModel"
+            type="com.ihminq.movie_hub.presentation.auth.viewmodel.AuthViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/dark_blue_purple"
-        tools:context=".presentation.register.ui.RegisterFragment">
+        tools:context=".presentation.auth.register.ui.RegisterFragment">
 
         <Button
             android:id="@+id/btn_back"
@@ -100,6 +100,6 @@
             app:backgroundTint="@null"
             android:textColor="@color/dark_blue_grey"
             android:background="@drawable/bg_btn_sign_in"
-            android:onClick="@{() -> registerViewModel.register(user)}"/>
+            android:onClick="@{() -> authViewModel.register(user)}"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

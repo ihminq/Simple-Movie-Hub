@@ -15,7 +15,7 @@ import android.widget.Button;
 
 import com.ihminq.movie_hub.R;
 import com.ihminq.movie_hub.databinding.FragmentProfileBinding;
-import com.ihminq.movie_hub.domain.model.auth.User;
+import com.ihminq.movie_hub.presentation.auth.viewmodel.AuthViewModel;
 import com.ihminq.movie_hub.presentation.home.viewmodel.HomeViewModel;
 
 import dagger.hilt.android.AndroidEntryPoint;
@@ -23,6 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class ProfileFragment extends Fragment {
     private FragmentProfileBinding mBinding;
+    private AuthViewModel mAuthViewModel;
     private HomeViewModel mHomeViewModel;
     private NavController mNavController;
     private Button mBtnEdit, mBtnLogout;
@@ -34,8 +35,8 @@ public class ProfileFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         //get ViewModel
+        mAuthViewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
         mHomeViewModel = new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
-
         //get NavController
         mNavController = NavHostFragment.findNavController(this);
     }
@@ -58,7 +59,7 @@ public class ProfileFragment extends Fragment {
     }
 
     private void onBtnLogoutClicked() {
-        mBtnLogout.setOnClickListener(v -> mHomeViewModel.logout());
+        mBtnLogout.setOnClickListener(v -> mAuthViewModel.logout());
     }
 
 
