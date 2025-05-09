@@ -41,6 +41,7 @@ public class HomeFragment extends Fragment {
 
         //get ViewModel
         mHomeViewModel = new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
+        mHomeViewModel.loadCurrentUser();
     }
 
     @Override
