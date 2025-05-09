@@ -24,7 +24,7 @@ public class LoginViewModel extends ViewModel {
     private static final String TAG = "LoginViewModel";
     private final LoginUseCase mLoginUseCase;
     private final CheckLoggedInStatusUseCase mCheckLoggedInStatusUseCase;
-    private final CompositeDisposable mDisposables = new CompositeDisposable();
+    private final CompositeDisposable mDisposable = new CompositeDisposable();
     private final MutableLiveData<SingleEvent<ValidateResult>> mLoginResultLive;
 
     @Inject
@@ -47,7 +47,7 @@ public class LoginViewModel extends ViewModel {
                             mLoginResultLive.postValue(new SingleEvent<>(vr));
                         }
                 );
-        mDisposables.add(disposable);
+        mDisposable.add(disposable);
     }
 
     public LiveData<SingleEvent<ValidateResult>> getLoginResultLive() {
@@ -61,6 +61,6 @@ public class LoginViewModel extends ViewModel {
     @Override
     protected void onCleared() {
         super.onCleared();
-        mDisposables.clear();
+        mDisposable.clear();
     }
 }
